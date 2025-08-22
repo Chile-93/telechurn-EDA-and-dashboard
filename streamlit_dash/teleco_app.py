@@ -10,7 +10,7 @@ sns.set(style="whitegrid")
 # Load data
 @st.cache_data(show_spinner=False)
 def load_data():
-    df = pd.read_csv("telecom_churned_data.csv")
+    df = pd.read_csv("streamlit_dash/telecom_churned_data.csv")
     df['ChurnBinary'] = df['Churn'].map({'No': 0, 'Yes': 1})
     df['ChargeRange'] = pd.cut(df['MonthlyCharges'], bins=[0, 20, 40, 60, 80, 100, 120],
                                labels=["0-20", "21-40", "41-60", "61-80", "81-100", "101-120"])
